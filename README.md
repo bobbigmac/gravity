@@ -11,3 +11,8 @@ Original by [Brian Cruz](https://github.com/cruzsbrian)
 Third-dimension and simple color-by-z-depth by [Bob Davies](https://github.com/bobbigmac)
 
 [Demo with 3-dimensions](http://bobbigmac.github.io/gravity/)
+
+## Known Issues
+
+* 3d is slower than 2d (unsurprisingly).
+* No partial-body absorption.
