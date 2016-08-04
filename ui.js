@@ -32,17 +32,22 @@ function newParticle(m, v, x, y, z) {
 }
 
 function cloud(centerX, centerY, centerZ) {
-	for (var i = 0; i < 1000; i++) {
-		var angle = Math.random() * 2 * Math.PI;
+	for (var i = 0; i < 500; i++) {
+		var angle1 = Math.random() * 2 * Math.PI;
+		var angle2 = Math.random() * 2 * Math.PI;
 		var dist = Math.pow(Math.random() * 15, 2);
 		
-		var x = centerX + dist * Math.cos(angle);
-		var y = centerY + dist * Math.sin(angle);
-		var z = centerZ + dist * Math.tan(angle);
+		var x = centerX + dist * Math.cos(angle1) * Math.cos(angle2);
+		var y = centerY + dist * Math.sin(angle1);
+		var z = centerZ + dist * Math.cos(angle1) * Math.sin(angle2);
 
-		var vx = dist * Math.sin(angle) / 50;
-		var vy = -dist * Math.cos(angle) / 50;
-		var vz = dist * Math.tan(angle) / 50;
+		var vx = dist * Math.sin(angle2) / 25;
+		var vy = -dist * Math.cos(angle1) / 50;
+		var vz = -dist * Math.cos(angle2) / 25;
+
+		// var vx = dist * Math.sin(angle) / 50;
+		// var vy = -dist * Math.cos(angle) / 50;
+		// var vz = dist * Math.tan(angle) / 50;
 
 		newParticle(2, new Vector(vx, vy, vz), x, y, z);
 	}
